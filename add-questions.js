@@ -4,16 +4,24 @@ const Question = require('./models/Question');
 // Test questions data
 const testQuestions = [
     {
-        question: "What is 2 + 2?",
-        options: ["3", "4", "5", "6"]
+        question: "What is your go-to comfort food?",
+        options: ["Pizza", "Ice Cream", "Noodles", "Soup"]
     },
     {
-        question: "What is the capital of France?",
-        options: ["London", "Berlin", "Paris", "Madrid"]
+        question: "Which of these places would you love to visit the most?",
+        options: ["Beach", "Mountains", "City", "Countryside"]
     },
     {
-        question: "Which planet is known as the Red Planet?",
-        options: ["Venus", "Mars", "Jupiter", "Saturn"]
+        question: "What is your favorite season of the year?",
+        options: ["Spring", "Summer", "Autumn", "Winter"]
+    },
+    {
+        question: "Which type of movies do you prefer?",
+        options: ["Comedy", "Action", "Drama", "Horror"]
+    },
+    {
+        question: "What kind of music do you enjoy the most?",
+        options: ["Rock", "Classical", "Electronic", "Pop"]
     }
 ];
 
@@ -28,7 +36,7 @@ mongoose.connect('mongodb+srv://CiaLabs:Craniax101@cialabs.xrd42go.mongodb.net/c
         // Clear existing questions
         await Question.deleteMany({});
         console.log('Cleared existing questions');
-        
+
         // Insert new questions
         const insertedQuestions = await Question.insertMany(testQuestions);
         console.log(`Successfully added ${insertedQuestions.length} questions`);
